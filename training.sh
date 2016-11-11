@@ -106,7 +106,7 @@ function create() {
                     done
                     
                     while true; do
-                        read -e -p "Negative zip file path (blank for none): " negative_path
+                        read -e -p "Negative zip file path: " negative_path
                         n_length=${#negative_path}
 
                         if (( p_length > 0 )); then
