@@ -26,6 +26,29 @@ program
 
 
 program
+    .command("detail [id]")
+    .description('Fetch custom classifier verbose details')
+    .option('--key [key]', 'Watson Visual Recognition key.  (optional)')
+    .action(function(classifier_id) {
+
+        var cli = getCLI()
+        cli.detail(classifier_id);
+    })
+
+
+program
+    .command("classify [image]")
+    .description('Classify an image')
+    .option('--key [key]', 'Watson Visual Recognition key.  (optional)')
+    .option('--classifier_ids [ids]', 'Comma delimited list of classifier ids. (default="default")')
+    .action(function(imagePath) {
+
+        var cli = getCLI()
+        cli.classify(imagePath, this.classifier_ids);
+    })
+
+
+program
     .command("create")
     .description('Create a new custom classifier')
     .option('--key [key]', 'Watson Visual Recognition key.  (optional)')
@@ -41,11 +64,10 @@ program
 
 
 program
-    .command("delete")
+    .command("delete [id]")
     .description('Delete a custom classifier')
     .option('--key [key]', 'Watson Visual Recognition key.  (optional)')
-    .option('--classifier_id [id]', 'Custom classifier id to delete. (optional)')
-    .action(function() {
+    .action(function(classifier_id) {
 
         var cli = getCLI()
         cli.delete(this.classifier_id);

@@ -99,7 +99,7 @@ CLI.prototype.performDeletion = function(id) {
         if (error) {
             utils.warn(error.toString())
         } else {
-            utils.success("Classifier Deleted");
+            utils.info("Classifier Deleted");
         }
         utils.exit();
     });
@@ -201,9 +201,113 @@ CLI.prototype.performCreation = function(classifierName, positiveClasses, negati
     })
 }
 
-//todo list classifier details
-//todo invoke classifier
-//todo retrain classifier
+
+//display verbose classifier details
+CLI.prototype.detail = function(classifierId) {
+    var self = this;
+
+    //if classifier id was passed in using cli args, then go ahead and requet details
+    if (classifierId != undefined) {
+        return this.performFetchDetail(classifierId)
+    }
+
+    //otherwise display the list of classifiers that can be deleted
+    this.listClassifiers(function(classifiers) {
+
+        if (classifiers.length <= 0) {
+            utils.error("No custom classifiers exist for your account");
+            utils.exit();
+        }
+
+        utils.heading("Please specify a classifier_id to fetch in detail: ");
+        utils.prompt('classifier id: ', function(classifierId) {
+
+            var found = false;
+            classifiers.forEach(function(c) {
+                if (c.classifier_id == classifierId) {
+                    found = true;
+                }
+            })
+
+            if (found) {
+                self.performFetchDetail(classifierId);
+
+            } else {
+                utils.error("Invalid classifier id: ".red + classifierId.bold.red)
+                utils.exit(-1);
+            }
+        });
+
+    });
+}
+
+
+CLI.prototype.performFetchDetail = function(id) {
+    utils.log("Fetching details for: " + id);
+    this.vr.getClassifier({ classifier_id: id }, function(error, response) {
+        if (error) {
+            utils.warn(error.toString())
+        } else {
+            utils.info(JSON.stringify(response, null, 4));
+        }
+        utils.exit();
+    });
+}
+
+
+
+CLI.prototype.classify = function(imagePath, classifier_ids) {
+
+    var self = this;
+
+    if (classifier_ids == undefined || classifier_ids == "") {
+        classifier_ids = "default"
+    }
+    console.log(imagePath)
+        //if params are passed into CLI, go ahead and create it
+    if (imagePath != undefined && imagePath != "") {
+        return this.performClassification(imagePath, classifier_ids);
+    }
+
+    //otherwise prompt for user input
+    utils.heading("Ready to create a new custom classifier: ");
+    utils.prompt('Please specify classifier id(s) as a comma delimited list, or leave blank for default: ', function(classifier_ids) {
+
+        if (classifier_ids.length <= 0) {
+            classifier_ids = "default";
+        }
+
+        utils.promptForFilePath('File path: ', function(imagePath) {
+            utils.log(imagePath + "\n");
+            self.performClassification(imagePath, classifier_ids);
+        })
+
+    })
+}
+
+CLI.prototype.performClassification = function(imagePath, classifier_ids) {
+
+    utils.log("Classifying image...");
+
+    var params = {
+        images_file: fs.createReadStream(imagePath),
+        classifier_ids: classifier_ids.toString().split(",")
+    };
+
+
+    this.vr.classify(params, function(error, response) {
+        if (error) {
+            utils.error(error.toString().red)
+        } else {
+            utils.info(JSON.stringify(response, null, 4))
+        }
+        utils.exit();
+    })
+}
+
+
+
+
 
 function parsePositiveClassesFromRawArgs(rawArgs) {
     var classes = [];
