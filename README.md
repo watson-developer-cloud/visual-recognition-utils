@@ -207,10 +207,10 @@ npm link
 
 ## Uninstall
 
-If installed was installed via npm, use this command at the terminal:
+If CLI was installed via npm, use this command at the terminal:
 
 ```
-npm install watson-custom-classifier-tools
+npm uninstall watson-custom-classifier-tools
 ```
 
 If CLI was installed from local source, cd into the local source directory, and run:
