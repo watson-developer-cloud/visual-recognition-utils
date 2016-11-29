@@ -1,5 +1,13 @@
 # watson-visual-recognition-cli
 
+Command Line Interface for quickly and easily interacting with the Watson Visual Recognition service.  
+
+Check it out in the video below:
+
+[![Screencast of command line interface usage.](https://img.youtube.com/vi/XCMCK27KFvE/0.jpg)](https://www.youtube.com/watch?v=XCMCK27KFvE)
+
+https://youtu.be/XCMCK27KFvE
+
 ## Prerequisites:
 
 1. [Node.js](https://nodejs.org/en/download/) - Download and install Node.js 4.0 or later from [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
