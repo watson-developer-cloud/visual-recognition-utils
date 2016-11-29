@@ -53,19 +53,17 @@ Watson Visual Recognition - Custom Classifier Tools
     -h, --help  output usage information
 
 ```
------------------
 
-## Usage
 
 The CLI actions can be invoked as pure command line functions, with parameters passed as CLI arguments, or function as an interactive "waizard" that prompts for input.
 
-### Set your Watson Visual Recognition key
+## Set your Watson Visual Recognition key
 
 You must have a valid Watson Visual Recognition key to use this tool.  If you do not have one, you can get a free trial here: https://www.ibm.com/watson/developercloud/visual-recognition.html
 
 You can either pass the Watson Visual Recognition key as a CLI parameter, or save it in encrypted preferences so it does not need to be passed with every invocation.
 
-##### Specify Watson Key as CLI parameter
+#### Specify Watson Key as CLI parameter
 This will call the `list` command, using the Watson Visual Recognition key as a CLI argument:
 
 ```
@@ -74,7 +72,7 @@ wvrcc list --key YOUR_WATSON_KEY_HERE
 
 -OR-
 
-##### Set Watson Key in encrypted preferences
+#### Set Watson Key in encrypted preferences
 This will call the `list` command, using the Watson Visual Recognition key in preferences:
 
 ```
@@ -85,9 +83,9 @@ wvrcc set-key YOUR_WATSON_KEY_HERE
 wvrcc list
 ```
 
----
 
-### List existing custom classifiers
+
+## List existing custom classifiers
 
 Invoke the `list` command:
 
@@ -101,9 +99,8 @@ Or, with Watson key key argument:
 wvrcc list --key YOUR_WATSON_KEY_HERE
 ```
 
----
 
-### Create a new classifier
+## Create a new classifier
 
 Invoke the `create` command (You will be prompted for input).  You can specify **multiple** postitive classes, and optionally a negative collection of images, per service specs at: https://www.ibm.com/watson/developercloud/doc/visual-recognition/classifiers-tutorials.shtml
 
@@ -137,9 +134,8 @@ wvrcc create --key YOUR_WATSON_KEY_HERE
   --negative-path ./negative-other.zip
 ```
 
----
 
-### Show details for an existing classifier
+## Show details for an existing classifier
 
 Invoke the `detail` command (You will be prompted for classifier id):
 
@@ -158,9 +154,8 @@ Sample Usage:
 wvrcc detail --key 12345678901234789012347890 damage_123456780
 ```
 
----
 
-### Delete a classifier
+## Delete a classifier
 
 Invoke the `delete` command (You will be prompted for classifier id):
 
@@ -179,9 +174,8 @@ Sample Usage:
 wvrcc delete --key 12345678901234789012347890 damage_123456780
 ```
 
----
 
-### Classify (invoke a classifier)
+## Classify (invoke a classifier)
 Invoke the `classify` command:
 
 ```
@@ -199,9 +193,8 @@ wvrcc classify --key YOUR_WATSON_KEY_HERE --classifier_ids rust,cracks
 
 Output from the classify service will be displayed as a JSON object.
 
----
 
------------------
+
 
 ## Local Changes to the CLI
 
