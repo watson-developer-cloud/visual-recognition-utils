@@ -118,19 +118,19 @@ Or, with CLI arguments...
 
 One positive and one negative:
 ```
-wvrcc create --key YOUR_WATSON_KEY_HERE 
-  --name classifier_name 
-  --positive-class rust --positive-path ./positive.zip 
+wvrcc create --key YOUR_WATSON_KEY_HERE \
+  --name classifier_name \
+  --positive-class rust --positive-path ./positive.zip \ 
   --negative-path ./negative.zip
 ```
 
 Multiple postive classes and a negative:
 ```
-wvrcc create --key YOUR_WATSON_KEY_HERE 
-  --name train_parts 
-  --positive-class wheels --positive-path ./positive-wheels.zip
-  --positive-class rails --positive-path ./positive-rails.zip 
-  --positive-class springs --positive-path ./positive-springs.zip 
+wvrcc create --key YOUR_WATSON_KEY_HERE \
+  --name train_parts  \
+  --positive-class wheels --positive-path ./positive-wheels.zip \
+  --positive-class rails --positive-path ./positive-rails.zip \
+  --positive-class springs --positive-path ./positive-springs.zip \ 
   --negative-path ./negative-other.zip
 ```
 
