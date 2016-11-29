@@ -1,5 +1,5 @@
 {
-  "name": "custom-classifier-tools",
+  "name": "watson-custom-classifier-tools",
   "version": "1.0.0",
   "description": "Command Line Interface and NPM module for easily creating/updating Watson Visual Recognition customer classifiers.",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andrew Trice",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bin": {
     "wvrcc": "./index.js"
   },
@@ -16,7 +16,6 @@
     "co-prompt": "^1.0.0",
     "colors": "^1.1.2",
     "commander": "^2.9.0",
-    "omelette": "^0.3.1",
     "pad": "^1.0.2",
     "path-complete": "https://github.com/triceam/path-complete/tarball/master",
     "preferences": "^0.2.1",
