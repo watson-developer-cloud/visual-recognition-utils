@@ -188,7 +188,7 @@ Or, with CLI arguments:
 * can specify multiple classifiers as comma delimited list (no spaces)
 
 ```
-wvrcc classify --key YOUR_WATSON_KEY_HERE --classifier_ids rust,cracks
+wvrcc classify --key YOUR_WATSON_KEY_HERE --classifier_ids rust,cracks  ./path/to/image.jpg 
 ```
 
 Output from the classify service will be displayed as a JSON object.
