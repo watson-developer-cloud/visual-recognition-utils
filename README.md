@@ -8,18 +8,23 @@
 
 Option 1: To install the CLI from npm, open a terminal window and run:
 
+***OPTION 1 DOES NOT WORK YET B/C IT HAS NOT BEEN PUBLISHED***
+
 ```
 npm install -g watson-custom-classifier-tools
 ```
 
 
-Option 2: To install the CLI from local source code, open a terminal window and cd into the source code directory that contains `package.json` and `index.js`.  Then run:
+Option 2: To install the CLI from local source code: 
 
-```
-npm -g install .
-```
+* Clone this git repo to your local machine.
+* Open a terminal window and cd into the source code directory that contains `package.json` and `index.js`  
+* Then run:
+  ```
+  npm -g install .
+  ```
 
-*Note: You may need to run this with elevated priveleges using `sudo`.
+> *Note: You may need to run this with elevated priveleges using `sudo`.*
 
 ### Test Installation
 
