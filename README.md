@@ -60,23 +60,39 @@ You must have a valid Watson Visual Recognition key to use this tool.  If you do
 
 You can either pass the Watson Visual Recognition key as a CLI parameter, or save it in encrypted preferences so it does not need to be passed with every invocation.
 
-##### Specify Watson Key as CLI parameter
-This will call the `list` command, using the Watson Visual Recognition key as a CLI argument:
+> ##### Specify Watson Key as CLI parameter
+> This will call the `list` command, using the Watson Visual Recognition key as a CLI argument:
+> 
+> ```
+> wvrcc list --key YOUR_WATSON_KEY_HERE
+> ```
+
+> ##### Set Watson Key in encrypted preferences
+> This will call the `list` command, using the Watson Visual Recognition key in preferences:
+> 
+> ```
+> //first, set the key in preferences
+> wvrcc set-key YOUR_WATSON_KEY_HERE
+> 
+> //next, call the list command (key is saved for all subsequent actions) 
+> wvrcc list
+> ```
+
+
+### List existing custom classifiers
+
+Invoke the `list` command:
+
+```
+wvrcc list
+```
+
+Or, with Watson key key argument:
 
 ```
 wvrcc list --key YOUR_WATSON_KEY_HERE
 ```
 
-##### Set Watson Key in encrypted preferences
-This will call the `list` command, using the Watson Visual Recognition key in preferences:
-
-```
-//first, set the key in preferences
-wvrcc set-key YOUR_WATSON_KEY_HERE
-
-//next, call the list command (key is saved for all subsequent actions) 
-wvrcc list
-```
 
 -----------------
 
