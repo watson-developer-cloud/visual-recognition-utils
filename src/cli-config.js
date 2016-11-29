@@ -12,7 +12,6 @@ var prefs = new Preferences('wvrcc.preferences', {
 });
 
 
-//initialize cli commands
 
 program
     .command("list")
@@ -70,7 +69,7 @@ program
     .action(function(classifier_id) {
 
         var cli = getCLI()
-        cli.delete(this.classifier_id);
+        cli.delete(classifier_id);
     })
 
 

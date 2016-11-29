@@ -255,7 +255,7 @@ CLI.prototype.performFetchDetail = function(id) {
 }
 
 
-
+//classify an image
 CLI.prototype.classify = function(imagePath, classifier_ids) {
 
     var self = this;
