@@ -6,7 +6,8 @@
 
 ## Installation:
 
-***&#x1F534;OPTION 1 DOES NOT WORK YET B/C IT HAS NOT BEEN PUBLISHED&#x1F534;***
+***&#x1F534;OPTION 1 DOES NOT WORK YET B/C IT HAS NOT BEEN PUBLISHED YET&#x1F534;***
+
 Option 1: To install the CLI from npm, open a terminal window and run:
 
 ```
