@@ -85,6 +85,7 @@ wvrcc set-key YOUR_WATSON_KEY_HERE
 wvrcc list
 ```
 
+---
 
 ### List existing custom classifiers
 
@@ -99,6 +100,8 @@ Or, with Watson key key argument:
 ```
 wvrcc list --key YOUR_WATSON_KEY_HERE
 ```
+
+---
 
 ### Create a new classifier
 
@@ -132,9 +135,9 @@ wvrcc create --key YOUR_WATSON_KEY_HERE
   --positive-class rails --positive-path ./positive-rails.zip 
   --positive-class springs --positive-path ./positive-springs.zip 
   --negative-path ./negative-other.zip
-
 ```
 
+---
 
 ### Show details for an existing classifier
 
@@ -155,6 +158,8 @@ Sample Usage:
 wvrcc detail --key 12345678901234789012347890 damage_123456780
 ```
 
+---
+
 ### Delete a classifier
 
 Invoke the `delete` command (You will be prompted for classifier id):
@@ -174,6 +179,8 @@ Sample Usage:
 wvrcc delete --key 12345678901234789012347890 damage_123456780
 ```
 
+---
+
 ### Classify (invoke a classifier)
 Invoke the `classify` command:
 
@@ -192,8 +199,7 @@ wvrcc classify --key YOUR_WATSON_KEY_HERE --classifier_ids rust,cracks
 
 Output from the classify service will be displayed as a JSON object.
 
-
-
+---
 
 -----------------
 
