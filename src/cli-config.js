@@ -19,7 +19,7 @@ program
     .option('--key [key]', 'Watson Visual Recognition key.  (optional)')
     .action(function(command) {
 
-        var cli = getCLI()
+        var cli = getCLI(this)
         cli.listClassifiers();
     })
 
@@ -30,7 +30,7 @@ program
     .option('--key [key]', 'Watson Visual Recognition key.  (optional)')
     .action(function(classifier_id) {
 
-        var cli = getCLI()
+        var cli = getCLI(this)
         cli.detail(classifier_id);
     })
 
@@ -38,11 +38,10 @@ program
 program
     .command("classify [image]")
     .description('Classify an image')
-    .option('--key [key]', 'Watson Visual Recognition key.  (optional)')
     .option('--classifier_ids [ids]', 'Comma delimited list of classifier ids. (default="default")')
     .action(function(imagePath) {
 
-        var cli = getCLI()
+        var cli = getCLI(this)
         cli.classify(imagePath, this.classifier_ids);
     })
 
@@ -57,7 +56,7 @@ program
     .option('--negative-path [path]', 'File path to negative classifier data.  (optional)')
     .action(function() {
 
-        var cli = getCLI()
+        var cli = getCLI(this)
         cli.create(this, program.rawArgs);
     })
 
@@ -68,7 +67,7 @@ program
     .option('--key [key]', 'Watson Visual Recognition key.  (optional)')
     .action(function(classifier_id) {
 
-        var cli = getCLI()
+        var cli = getCLI(this)
         cli.delete(classifier_id);
     })
 
@@ -113,9 +112,11 @@ function defaultFeedback() {
     });
 }
 
-function getKey(program) {
-
-    if (program.key) {
+function getKey(command) {
+    //console.log(program)
+    if (command && command.key) {
+        return command.key
+    } else if (program.key) {
         return program.key;
     } else if (prefs.watson_key != "" && prefs.watson_key != undefined) {
         return prefs.watson_key;
@@ -125,6 +126,9 @@ function getKey(program) {
     }
 }
 
-function getCLI() {
-    return new CLI({ key: getKey(this) });
+function getCLI(command) {
+    if (command == undefined) {
+        command = this
+    }
+    return new CLI({ key: getKey(command) });
 }

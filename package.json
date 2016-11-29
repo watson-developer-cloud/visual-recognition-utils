@@ -1,7 +1,7 @@
 {
   "name": "watson-custom-classifier-tools",
   "version": "1.0.0",
-  "description": "Command Line Interface and NPM module for easily creating/updating Watson Visual Recognition customer classifiers.",
+  "description": "Command Line Interface for easily creating & managing IBM Watson Visual Recognition customer classifiers.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,7 +19,6 @@
     "pad": "^1.0.2",
     "path-complete": "https://github.com/triceam/path-complete/tarball/master",
     "preferences": "^0.2.1",
-    "prompt": "^1.0.0",
     "request": "^2.78.0",
     "watson-developer-cloud": "^2.9.0"
   }

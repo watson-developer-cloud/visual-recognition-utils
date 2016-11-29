@@ -50,6 +50,36 @@ Watson Visual Recognition - Custom Classifier Tools
 ```
 -----------------
 
+## Usage
+
+The CLI actions can be invoked as pure command line functions, with parameters passed as CLI arguments, or function as an interactive "waizard" that prompts for input.
+
+### Set your Watson Visual Recognition key
+
+You must have a valid Watson Visual Recognition key to use this tool.  If you do not have one, you can get a free trial here: https://www.ibm.com/watson/developercloud/visual-recognition.html
+
+You can either pass the Watson Visual Recognition key as a CLI parameter, or save it in encrypted preferences so it does not need to be passed with every invocation.
+
+##### Specify Watson Key as CLI parameter
+This will call the `list` command, using the Watson Visual Recognition key as a CLI argument:
+
+```
+wvrcc list --key YOUR_WATSON_KEY_HERE
+```
+
+##### Set Watson Key in encrypted preferences
+This will call the `list` command, using the Watson Visual Recognition key in preferences:
+
+```
+//first, set the key in preferences
+wvrcc set-key YOUR_WATSON_KEY_HERE
+
+//next, call the list command (key is saved for all subsequent actions) 
+wvrcc list
+```
+
+-----------------
+
 ## Local Changes to the CLI
 
 If you would like to make changes in the local source code folder, you need to link back to the local source folder.   You can link the executable to local source code by cd'ing into the local source code folder and running:
