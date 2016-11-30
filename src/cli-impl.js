@@ -349,4 +349,20 @@ function parsePositiveClassesFromRawArgs(rawArgs) {
 }
 
 
+
+
+CLI.prototype.showUsage = function(callback) {
+    utils.heading("Fetching API Key usage information...");
+
+    var url = "http://access.alchemyapi.com/calls/info/GetAPIKeyInfo?apikey=" + this.WATSON_KEY
+    request(url, function(error, response, body) {
+        if (error) {
+            utils.error(error.toString())
+        }
+        utils.info(body.toString())
+        utils.lineBreak();
+    })
+}
+
+
 module.exports = CLI;

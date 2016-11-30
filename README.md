@@ -92,6 +92,32 @@ wvrcc list
 ```
 
 
+## View API Key daily usage and limit
+Invoke the `usage` command:
+
+```
+wvrcc usage
+```
+
+Or, with Watson key key argument:
+
+```
+wvrcc usage --key YOUR_WATSON_KEY_HERE
+```
+
+Output will show status and daily usage information.  For example:
+
+```
+$ wvrcc usage
+Fetching API Key usage information...
+<?xml version="1.0" encoding="UTF-8"?>
+<results>
+    <status>OK</status>
+    <consumedDailyTransactions>1</consumedDailyTransactions>
+    <dailyTransactionLimit>25000</dailyTransactionLimit>
+</results>
+```
+
 
 ## List existing custom classifiers
 

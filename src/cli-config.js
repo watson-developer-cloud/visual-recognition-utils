@@ -73,6 +73,18 @@ program
     })
 
 
+
+program
+    .command("usage")
+    .description('View IBM Watson Visual Recognition API Key usage and limits')
+    .option('--key [key]', 'Watson Visual Recognition key.  (optional)')
+    .action(function(command) {
+
+        var cli = getCLI(this)
+        cli.showUsage();
+    })
+
+
 program
     .command("set-key [key]")
     .description('Save your Watson Visual Recognition key in CLI preferences')
