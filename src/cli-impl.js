@@ -8,9 +8,9 @@ var fs = require('fs');
 var utils = require("./cli-utils.js");
 
 var VisualRecognitionV3 = require('watson-developer-cloud/visual-recognition/v3');
-var vr = undefined;
 
 function CLI(options) {
+    this.vr = undefined;
     this.WATSON_KEY = options.key;
     this.WATSON_VERSION = options.version ? options.version : "2016-05-20"
 
