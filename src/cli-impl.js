@@ -357,7 +357,7 @@ CLI.prototype.showUsage = function(callback) {
     var url = "http://access.alchemyapi.com/calls/info/GetAPIKeyInfo?apikey=" + this.WATSON_KEY
     request(url, function(error, response, body) {
         if (error) {
-            utils.error(error.toString())
+            utils.error(error.toString().red)
         }
         utils.info(body.toString())
         utils.lineBreak();
