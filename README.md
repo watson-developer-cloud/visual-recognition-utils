@@ -113,7 +113,7 @@ Fetching API Key usage information...
 <?xml version="1.0" encoding="UTF-8"?>
 <results>
     <status>OK</status>
-    <consumedDailyTransactions>1</consumedDailyTransactions>
+    <consumedDailyTransactions>1234</consumedDailyTransactions>
     <dailyTransactionLimit>25000</dailyTransactionLimit>
 </results>
 ```
