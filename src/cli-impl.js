@@ -3,11 +3,10 @@ var colors = require('colors');
 var request = require('request');
 var co = require('co');
 var fs = require('fs');
-
-
 var utils = require("./cli-utils.js");
-
 var VisualRecognitionV3 = require('watson-developer-cloud/visual-recognition/v3');
+
+
 
 function CLI(options) {
     this.vr = undefined;
