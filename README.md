@@ -122,7 +122,7 @@ Fetching API Key usage information...
 Invoke the `classifier-list` command:
 
 ```
-wvru list
+wvru classifier-list
 ```
 
 
@@ -143,20 +143,12 @@ wvru classifier-create
 
 One positive and one negative:
 ```
-wvru classifier-create \
-  --name classifier_name \
-  --positive-class rust --positive-path ./positive.zip \ 
-  --negative-path ./negative.zip
+wvru classifier-create --name classifier_name --positive-class rust --positive-path ./positive.zip --negative-path ./negative.zip
 ```
 
 Multiple postive classes and a negative:
 ```
-wvru classifier-create \
-  --name train_parts  \
-  --positive-class wheels --positive-path ./positive-wheels.zip \
-  --positive-class rails --positive-path ./positive-rails.zip \
-  --positive-class springs --positive-path ./positive-springs.zip \ 
-  --negative-path ./negative-other.zip
+wvru classifier-create --name train_parts --positive-class wheels --positive-path ./positive-wheels.zip --positive-class rails --positive-path ./positive-rails.zip --positive-class springs --positive-path ./positive-springs.zip --negative-path ./negative-other.zip
 ```
 
 
