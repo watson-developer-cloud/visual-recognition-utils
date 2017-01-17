@@ -11,25 +11,14 @@ Command Line Interface for quickly and easily interacting with the Watson Visual
 
 Make sure you read the documentation for [Visual Recognition](https://www.ibm.com/watson/developercloud/doc/visual-recognition/index.shtml) before using this library.
 
-***&#x1F534;OPTION 1 DOES NOT WORK YET B/C IT HAS NOT BEEN PUBLISHED YET&#x1F534;***
+***&#x1F534;NOTE: INSTALLATION DOES NOT WORK YET B/C IT HAS NOT BEEN PUBLISHED TO NPM YET&#x1F534;***
 
-*Option 1: (preferred)* To install the CLI from npm, open a terminal window and run:
+To install the CLI from npm, open a terminal window and run:
 
 ```
 npm install -g watson-custom-classifier-tools
 ```
 
-
-*Option 2:* To install the CLI from local source code: 
-
-* Clone this git repo to your local machine.
-* Open a terminal window and cd into the source code directory that contains `package.json` and `index.js`  
-* Then run:
-  ```
-  npm -g install .
-  ```
-
-> *Note: You may need to run this with elevated priveleges using `sudo`.*
 
 ### Test Installation
 
@@ -189,9 +178,20 @@ wvru classifier-classify --image ./path/to/image.jpg --classifier_ids default,ru
 Output from the classify service will be displayed as a JSON object.
 
 
+## Local Development
 
+###To install the CLI from local source code: 
 
-## Local Changes to the CLI
+* Clone this git repo to your local machine.
+* Open a terminal window and cd into the source code directory that contains `package.json` and `index.js`  
+* Then run:
+  ```
+  npm -g install .
+  ```
+
+> *Note: You may need to run this with elevated priveleges using `sudo`.*
+
+### Local Changes to the CLI
 
 If you would like to make changes in the local source code folder, you need to link back to the local source folder.   You can link the executable to local source code by cd'ing into the local source code folder and running:
 
