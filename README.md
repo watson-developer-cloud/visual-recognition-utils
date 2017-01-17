@@ -1,12 +1,7 @@
-# watson-visual-recognition-cli
+# watson-visual-recognition-utils
 
-Command Line Interface for quickly and easily interacting with the Watson Visual Recognition service.  
+Command Line Interface for quickly and easily interacting with the Watson Visual Recognition service & custom classifiers.  
 
-Check it out in the video below:
-
-[![Screencast of command line interface usage.](https://img.youtube.com/vi/XCMCK27KFvE/0.jpg)](https://www.youtube.com/watch?v=XCMCK27KFvE)
-
-https://youtu.be/XCMCK27KFvE
 
 ## Prerequisites:
 
@@ -14,16 +9,18 @@ https://youtu.be/XCMCK27KFvE
 
 ## Installation:
 
+Make sure you read the documentation for [Visual Recognition](https://www.ibm.com/watson/developercloud/doc/visual-recognition/index.shtml) before using this library.
+
 ***&#x1F534;OPTION 1 DOES NOT WORK YET B/C IT HAS NOT BEEN PUBLISHED YET&#x1F534;***
 
-Option 1: To install the CLI from npm, open a terminal window and run:
+*Option 1: (preferred)* To install the CLI from npm, open a terminal window and run:
 
 ```
 npm install -g watson-custom-classifier-tools
 ```
 
 
-Option 2: To install the CLI from local source code: 
+*Option 2:* To install the CLI from local source code: 
 
 * Clone this git repo to your local machine.
 * Open a terminal window and cd into the source code directory that contains `package.json` and `index.js`  
@@ -36,34 +33,35 @@ Option 2: To install the CLI from local source code:
 
 ### Test Installation
 
-Run the command `wvrcc` in the terminal, you should see something like this:
+Run either the command `watson-visual-recognition-utils` or `wvru` in the terminal (both are aliases to the same code), you should see something like this:
 
 ```
-$ wvrcc
-Watson Visual Recognition - Custom Classifier Tools
+$ wvru
+Watson Visual Recognition - Custom Classifier Utilities
 
-  Usage:  [options] [command]
+  Usage:  <command> [options]
 
 
   Commands:
 
-    list [options]             List all custom classifiers
-    detail [options] [id]      Fetch custom classifier verbose details
-    classify [options] [image]  Classify an image
-    create [options]           Create a new custom classifier
-    delete [options] [id]      Delete a custom classifier
-    set-key [key]              Save your Watson Visual Recognition key in CLI preferences
-    unset-key                  Remove your Watson Visual Recognition key in CLI preferences
+    api-usage [options]             View IBM Watson Visual Recognition API Key usage and limits
+    classifier-list [options]       List all custom classifiers
+    classifier-detail [options]     Fetch custom classifier verbose details
+    classifier-classify [options]   Classify an image
+    classifier-create [options]     Create a new custom classifier
+    classifier-delete [options]     Delete a custom classifier
+    key-set <key>                   Save your Watson Visual Recognition key in CLI preferences
+    key-unset                       Remove your Watson Visual Recognition key in CLI preferences
     *
 
   Options:
 
-    -h, --help  output usage information
+    -h, --help     output usage information
+    -V, --version  output the version number
+
 
 ```
 
-
-The CLI actions can be invoked as pure command line functions, with parameters passed as CLI arguments, or function as an interactive "waizard" that prompts for input.
 
 ## Set your Watson Visual Recognition key
 
@@ -75,7 +73,7 @@ You can either pass the Watson Visual Recognition key as a CLI parameter, or sav
 This will call the `list` command, using the Watson Visual Recognition key as a CLI argument:
 
 ```
-wvrcc list --key YOUR_WATSON_KEY_HERE
+wvru classifier-list --key YOUR_WATSON_KEY_HERE
 ```
 
 -OR-
@@ -85,30 +83,30 @@ This will call the `list` command, using the Watson Visual Recognition key in pr
 
 ```
 //first, set the key in preferences
-wvrcc set-key YOUR_WATSON_KEY_HERE
+wvru key-set YOUR_WATSON_KEY_HERE
 
 //next, call the list command (key is saved for all subsequent actions) 
-wvrcc list
+wvru classifier-list
 ```
 
 
 ## View API Key daily usage and limit
-Invoke the `usage` command:
+Invoke the `api-usage` command:
 
 ```
-wvrcc usage
+wvru api-usage
 ```
 
 Or, with Watson key key argument:
 
 ```
-wvrcc usage --key YOUR_WATSON_KEY_HERE
+wvru api-usage --key YOUR_WATSON_KEY_HERE
 ```
 
 Output will show status and daily usage information.  For example:
 
 ```
-$ wvrcc usage
+$ wvru api-usage
 Fetching API Key usage information...
 <?xml version="1.0" encoding="UTF-8"?>
 <results>
@@ -121,28 +119,21 @@ Fetching API Key usage information...
 
 ## List existing custom classifiers
 
-Invoke the `list` command:
+Invoke the `classifier-list` command:
 
 ```
-wvrcc list
-```
-
-Or, with Watson key key argument:
-
-```
-wvrcc list --key YOUR_WATSON_KEY_HERE
+wvru list
 ```
 
 
 ## Create a new classifier
 
-Invoke the `create` command (You will be prompted for input).  You can specify **multiple** postitive classes, and optionally a negative collection of images, per service specs at: https://www.ibm.com/watson/developercloud/doc/visual-recognition/classifiers-tutorials.shtml
+Invoke the `classifier-create` command.  You can specify **multiple** postitive classes, and optionally a negative collection of images, per service specs at: https://www.ibm.com/watson/developercloud/doc/visual-recognition/classifiers-tutorials.shtml
 
 ```
-wvrcc create
+wvru classifier-create
 ```
 
-Or, with CLI arguments... 
 
 * You can specify multiple postive classes
   * requires pairs of `--positive-class` (string for class name) and `--positive-path` (path to zip file for positive images).  
@@ -152,7 +143,7 @@ Or, with CLI arguments...
 
 One positive and one negative:
 ```
-wvrcc create --key YOUR_WATSON_KEY_HERE \
+wvru classifier-create \
   --name classifier_name \
   --positive-class rust --positive-path ./positive.zip \ 
   --negative-path ./negative.zip
@@ -160,7 +151,7 @@ wvrcc create --key YOUR_WATSON_KEY_HERE \
 
 Multiple postive classes and a negative:
 ```
-wvrcc create --key YOUR_WATSON_KEY_HERE \
+wvru classifier-create \
   --name train_parts  \
   --positive-class wheels --positive-path ./positive-wheels.zip \
   --positive-class rails --positive-path ./positive-rails.zip \
@@ -171,21 +162,10 @@ wvrcc create --key YOUR_WATSON_KEY_HERE \
 
 ## Show details for an existing classifier
 
-Invoke the `detail` command (You will be prompted for classifier id):
+Invoke the `classifier-detail` command (You will be prompted for classifier id):
 
 ```
-wvrcc detail
-```
-
-Or, with CLI arguments:
-
-```
-wvrcc detail --key YOUR_WATSON_KEY_HERE CLASSIFIER_ID
-```
-
-Sample Usage:
-```
-wvrcc detail --key 12345678901234789012347890 damage_123456780
+wvru classifier-detail
 ```
 
 
@@ -194,18 +174,7 @@ wvrcc detail --key 12345678901234789012347890 damage_123456780
 Invoke the `delete` command (You will be prompted for classifier id):
 
 ```
-wvrcc delete
-```
-
-Or, with CLI arguments:
-
-```
-wvrcc delete --key YOUR_WATSON_KEY_HERE CLASSIFIER_ID
-```
-
-Sample Usage:
-```
-wvrcc delete --key 12345678901234789012347890 damage_123456780
+wvru delete
 ```
 
 
@@ -213,16 +182,16 @@ wvrcc delete --key 12345678901234789012347890 damage_123456780
 Invoke the `classify` command:
 
 ```
-wvrcc classify ./path/to/image.jpg
+wvru classifier-classify
 ```
 
-Or, with CLI arguments:
+With CLI arguments:
 
 * default classifier is system "default"
 * can specify multiple classifiers as comma delimited list (no spaces)
 
 ```
-wvrcc classify --key YOUR_WATSON_KEY_HERE --classifier_ids rust,cracks  ./path/to/image.jpg 
+wvru classifier-classify --image ./path/to/image.jpg --classifier_ids default,rust,cracks  
 ```
 
 Output from the classify service will be displayed as a JSON object.
@@ -237,18 +206,15 @@ If you would like to make changes in the local source code folder, you need to l
 ```
 npm link
 ```
------------------
 
-## Uninstall
 
-If CLI was installed via npm, use this command at the terminal:
+## License
 
-```
-npm uninstall watson-custom-classifier-tools
-```
+This sample code is licensed under Apache 2.0.
 
-If CLI was installed from local source, cd into the local source directory, and run:
+## Contributing
 
-```
-npm uninstall .
-```
+See [CONTRIBUTING](.github/CONTRIBUTING.md).
+
+## Open Source @ IBM
+Find more open source projects on the [IBM Github Page](http://ibm.github.io/)
