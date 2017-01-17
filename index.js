@@ -1,11 +1,14 @@
 #!/usr/bin/env node --harmony
 
+const pkg = require('./package.json');
+require('colors');
 
 if (require.main === module) {
     //setup as command line utility
-    require("./src/cli-config.js");
+    require("./lib/index.js");
 } else {
-    //setup as Node module
-    console.log("WVRCC is intended to be invoked as a command line utility, not as a module include")
-    console.log("If you'd like to programmatically integrate custom classifier creation into your app, you should leverage the Watson SDK at https://github.com/watson-developer-cloud/node-sdk/");
+  // setup as Node module
+  console.log(`${pkg.name} is a command line tool, not a module include.`.yellow);
+  console.log('If you\'d like to programmatically integrate the Watson services' +
+  ' into your app, use the Watson Node.js SDK https://github.com/watson-developer-cloud/node-sdk/');
 }

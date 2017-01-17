@@ -1,25 +1,38 @@
 {
-  "name": "watson-custom-classifier-tools",
+  "name": "watson-visual-recognition-utils",
   "version": "1.0.0",
-  "description": "Command Line Interface for easily creating & managing IBM Watson Visual Recognition customer classifiers.",
+  "description": "Command Line Interface and NPM module for easily creating/updating Watson Visual Recognition customer classifiers.",
   "main": "index.js",
+  "engines": {
+    "node": ">=4.0",
+    "npm": ">=3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IBM-Bluemix/watson-visual-recognition-cli.git"
+  },
+  "author": "Andrew Trice",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IBM-Bluemix/watson-visual-recognition-cli/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Andrew Trice",
-  "license": "Apache-2.0",
   "bin": {
-    "wvrcc": "./index.js"
+    "watson-visual-recognition-utils": "./index.js",
+    "wvru": "./index.js"
   },
   "dependencies": {
-    "co": "^4.6.0",
-    "co-prompt": "^1.0.0",
+    "bluebird": "^3.4.7",
     "colors": "^1.1.2",
+    "columnify": "^1.5.4",
     "commander": "^2.9.0",
-    "pad": "^1.0.2",
-    "path-complete": "https://github.com/triceam/path-complete/tarball/master",
+    "inquirer": "^2.0.0",
+    "object.pick": "^1.2.0",
     "preferences": "^0.2.1",
-    "request": "^2.78.0",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1",
     "watson-developer-cloud": "^2.9.0"
   }
 }
