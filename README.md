@@ -155,7 +155,7 @@ wvru classifier-detail
 Invoke the `delete` command (You will be prompted for classifier id):
 
 ```
-wvru delete
+wvru classifier-delete
 ```
 
 
