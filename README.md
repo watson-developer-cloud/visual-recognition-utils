@@ -193,11 +193,7 @@ Output from the classify service will be displayed as a JSON object.
 
 ### Local Changes to the CLI
 
-If you would like to make changes in the local source code folder, you need to link back to the local source folder.   You can link the executable to local source code by cd'ing into the local source code folder and running:
-
-```
-npm link
-```
+If you would like to make changes in the local source code folder, you need to link back to the local source folder.   You can link the executable to local source code by cd'ing into the local source code folder and running: `npm link`
 
 
 ## License
