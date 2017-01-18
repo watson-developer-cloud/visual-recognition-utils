@@ -33,7 +33,7 @@ Watson Visual Recognition - Custom Classifier Utilities
     classifier-create [options]     Create a new custom classifier
     classifier-delete [options]     Delete a custom classifier
     key-set <key>                   Save your Watson Visual Recognition key in CLI preferences
-    key-unset                       Remove your Watson Visual Recognition key in CLI preferences
+    key-unset                       Remove your Watson Visual Recognition key in CLI preference
 
   Options:
 
@@ -118,3 +118,6 @@ See [CONTRIBUTING](.github/CONTRIBUTING.md).
 
 ## Open Source @ IBM
 Find more open source projects on the [IBM Github Page](http://ibm.github.io/)
+
+
+[docs]: https://www.ibm.com/watson/developercloud/visual-recognition.html
