@@ -16,7 +16,7 @@ Make sure you read the documentation for [Visual Recognition](https://www.ibm.co
 To install the CLI from npm, open a terminal window and run:
 
 ```
-npm install -g watson-custom-classifier-tools
+npm install -g watson-visual-recognition-utils
 ```
 
 
