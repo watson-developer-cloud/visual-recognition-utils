@@ -4,8 +4,8 @@ const pkg = require('./package.json');
 require('colors');
 
 if (require.main === module) {
-    //setup as command line utility
-    require("./lib/index.js");
+  //setup as command line utility
+  require('./lib/index.js');
 } else {
   // setup as Node module
   console.log(`${pkg.name} is a command line tool, not a module include.`.yellow);

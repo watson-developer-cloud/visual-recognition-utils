@@ -5,7 +5,7 @@ Command Line Interface for quickly and easily interacting with the Watson Visual
 
 ## Prerequisites:
 
-1. [Node.js](https://nodejs.org/en/download/) - Download and install Node.js 4.0 or later from [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
+1. [Node.js](https://nodejs.org/en/download/) - Download and install Node.js from [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
 
 ## Installation:
 

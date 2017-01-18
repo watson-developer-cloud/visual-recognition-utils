@@ -16,9 +16,6 @@
   "bugs": {
     "url": "https://github.com/IBM-Bluemix/watson-visual-recognition-cli/issues"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "bin": {
     "watson-visual-recognition-utils": "./index.js",
     "wvru": "./index.js"
@@ -34,5 +31,19 @@
     "request": "^2.79.0",
     "request-promise": "^4.1.1",
     "watson-developer-cloud": "^2.9.0"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run mocha",
+    "mocha": "istanbul cover ./node_modules/mocha/bin/_mocha test",
+    "lint": "eslint .",
+    "autofix": "eslint --fix .",
+    "codecov": "npm run test && (codecov || true)"
+  },
+  "devDependencies": {
+    "codecov": "^1.0.1",
+    "eslint": "^3.13.1",
+    "istanbul": "^0.4.2",
+    "mocha": "^3.1.0",
+    "should": "^11.1.2"
   }
 }
