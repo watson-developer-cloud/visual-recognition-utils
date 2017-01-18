@@ -1,6 +1,6 @@
 {
   "name": "watson-visual-recognition-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Command Line Interface and NPM module for easily creating/updating Watson Visual Recognition customer classifiers.",
   "main": "index.js",
   "engines": {
