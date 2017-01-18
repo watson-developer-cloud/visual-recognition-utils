@@ -2,6 +2,8 @@
 
 Command Line Interface for quickly and easily interacting with the Watson Visual Recognition service & custom classifiers.  
 
+[![Build Status](https://travis-ci.org/IBM-Bluemix/visual-recognition-utils.svg?branch=master)](https://travis-ci.org/IBM-Bluemix/visual-recognition-utils)
+
 
 ## Prerequisites:
 
@@ -10,8 +12,6 @@ Command Line Interface for quickly and easily interacting with the Watson Visual
 ## Installation:
 
 Make sure you read the documentation for [Visual Recognition](https://www.ibm.com/watson/developercloud/doc/visual-recognition/index.shtml) before using this library.
-
-***&#x1F534;NOTE: INSTALLATION DOES NOT WORK YET B/C IT HAS NOT BEEN PUBLISHED TO NPM YET&#x1F534;***
 
 To install the CLI from npm, open a terminal window and run:
 
@@ -25,7 +25,7 @@ npm install -g watson-visual-recognition-utils
 Run either the command `watson-visual-recognition-utils` or `wvru` in the terminal (both are aliases to the same code), you should see something like this:
 
 ```
-$ wvru
+$ watson-visual-recognition-utils
 Watson Visual Recognition - Custom Classifier Utilities
 
   Usage:  <command> [options]
@@ -62,7 +62,7 @@ You can either pass the Watson Visual Recognition key as a CLI parameter, or sav
 This will call the `list` command, using the Watson Visual Recognition key as a CLI argument:
 
 ```
-wvru classifier-list --key YOUR_WATSON_KEY_HERE
+watson-visual-recognition-utils classifier-list --key YOUR_WATSON_KEY_HERE
 ```
 
 -OR-
@@ -72,10 +72,10 @@ This will call the `list` command, using the Watson Visual Recognition key in pr
 
 ```
 //first, set the key in preferences
-wvru key-set YOUR_WATSON_KEY_HERE
+watson-visual-recognition-utils key-set YOUR_WATSON_KEY_HERE
 
 //next, call the list command (key is saved for all subsequent actions) 
-wvru classifier-list
+watson-visual-recognition-utils classifier-list
 ```
 
 
@@ -83,19 +83,19 @@ wvru classifier-list
 Invoke the `api-usage` command:
 
 ```
-wvru api-usage
+watson-visual-recognition-utils api-usage
 ```
 
 Or, with Watson key key argument:
 
 ```
-wvru api-usage --key YOUR_WATSON_KEY_HERE
+watson-visual-recognition-utils api-usage --key YOUR_WATSON_KEY_HERE
 ```
 
 Output will show status and daily usage information.  For example:
 
 ```
-$ wvru api-usage
+$ watson-visual-recognition-utils api-usage
 Fetching API Key usage information...
 <?xml version="1.0" encoding="UTF-8"?>
 <results>
@@ -111,7 +111,7 @@ Fetching API Key usage information...
 Invoke the `classifier-list` command:
 
 ```
-wvru classifier-list
+watson-visual-recognition-utils classifier-list
 ```
 
 
@@ -120,7 +120,7 @@ wvru classifier-list
 Invoke the `classifier-create` command.  You can specify **multiple** postitive classes, and optionally a negative collection of images, per service specs at: https://www.ibm.com/watson/developercloud/doc/visual-recognition/classifiers-tutorials.shtml
 
 ```
-wvru classifier-create
+watson-visual-recognition-utils classifier-create
 ```
 
 
@@ -132,12 +132,12 @@ wvru classifier-create
 
 One positive and one negative:
 ```
-wvru classifier-create --name classifier_name --positive-class rust --positive-path ./positive.zip --negative-path ./negative.zip
+watson-visual-recognition-utils classifier-create --name classifier_name --positive-class rust --positive-path ./positive.zip --negative-path ./negative.zip
 ```
 
 Multiple postive classes and a negative:
 ```
-wvru classifier-create --name train_parts --positive-class wheels --positive-path ./positive-wheels.zip --positive-class rails --positive-path ./positive-rails.zip --positive-class springs --positive-path ./positive-springs.zip --negative-path ./negative-other.zip
+watson-visual-recognition-utils classifier-create --name train_parts --positive-class wheels --positive-path ./positive-wheels.zip --positive-class rails --positive-path ./positive-rails.zip --positive-class springs --positive-path ./positive-springs.zip --negative-path ./negative-other.zip
 ```
 
 
@@ -146,7 +146,7 @@ wvru classifier-create --name train_parts --positive-class wheels --positive-pat
 Invoke the `classifier-detail` command (You will be prompted for classifier id):
 
 ```
-wvru classifier-detail
+watson-visual-recognition-utils classifier-detail
 ```
 
 
@@ -155,7 +155,7 @@ wvru classifier-detail
 Invoke the `delete` command (You will be prompted for classifier id):
 
 ```
-wvru classifier-delete
+watson-visual-recognition-utils classifier-delete
 ```
 
 
@@ -163,7 +163,7 @@ wvru classifier-delete
 Invoke the `classify` command:
 
 ```
-wvru classifier-classify
+watson-visual-recognition-utils classifier-classify
 ```
 
 With CLI arguments:
@@ -172,7 +172,7 @@ With CLI arguments:
 * can specify multiple classifiers as comma delimited list (no spaces)
 
 ```
-wvru classifier-classify --image ./path/to/image.jpg --classifier_ids default,rust,cracks  
+watson-visual-recognition-utils classifier-classify --image ./path/to/image.jpg --classifier_ids default,rust,cracks  
 ```
 
 Output from the classify service will be displayed as a JSON object.
