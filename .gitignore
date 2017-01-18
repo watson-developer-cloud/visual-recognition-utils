@@ -45,3 +45,9 @@ jspm_packages
 
 # Yarn Integrity file
 .yarn-integrity
+
+# vscode editor files
+.vscode
+
+.env
+.DS_Store

@@ -25,6 +25,7 @@
     "colors": "^1.1.2",
     "columnify": "^1.5.4",
     "commander": "^2.9.0",
+    "dotenv": "^4.0.0",
     "inquirer": "^2.0.0",
     "object.pick": "^1.2.0",
     "preferences": "^0.2.1",
