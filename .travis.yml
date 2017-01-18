@@ -4,9 +4,16 @@ sudo: required
 node_js: 6
 script:
 - npm test
-
 cache:
   directories:
   - node_modules
 notifications:
   email: false
+deploy:
+  provider: npm
+  email: germanattanasio@gmail.com
+  api_key:
+    secure: b3dDSLdhw8KxCjoC3qIzfOxaeguXFGQLnkv+vczzHOmsVze2Ioh9EeiP6RQglj1FFGhdla6FGceYmKPlefPhvcav8YiAPktYWPrTamF193Uo4z0iDoNqQE7ajuNoMUn6zGgmtzFgDM4l7KLwHCiQgLZtGelI/WvPSOTvO+mx4324+RMY+SRoSxkDuLv5fZaWXd5qG7RGid5wM8g//R+d1mIgwAX/3iu0axtRcdbRrvR3v0PmpTbb2f2tdwLBUOfF1Z+j4erwzoNPc9b9+hgX/dX7kJUIJtODCFqrhBzpBsueTdhHQYMDMaIMe1/qR+abNvDEc/zC2SbpVnZL8tUSL7dA0GP6Q+FusnBMocid9k7hr09QxBY79Rene7aihx/eearjxaG48oMy9GTf1VMS49PLxDVBgoBJw+RpvDXkVcAM1xZbK/Gkfi9Bzxdq/X+Alma4Zyqc3mje+fcXOsQMk8t/9j1GFB/LtWXUhagkCZE+hffWM/4T5uLEf8fYd/RZy07GrRNISeQ8D+UrbykEuCea1DtnU9RLfAmiGTt/PeGkJ4i0w7OfNSfcwk8bbKbCnGx8zNS7T2RF0GVoip/sbk3IW5YvAWZ4GYHm+kqQp/JByeMADms36hMqSS60VBgeNah7fOigzbrTPjiGpSTa1YcJ0pKsfN9H72y5XvqHzzE=
+  on:
+    tags: true
+    repo: watson-developer-cloud/visual-recognition-utils

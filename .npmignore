@@ -1,0 +1,6 @@
+coverage
+test
+.eslintrc.yml
+CONTRIBUTING.md
+.travis.yml
+.eslintignore
