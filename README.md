@@ -1,4 +1,4 @@
-# Visual Recognition CLI [![Build Status](https://travis-ci.org/watson-developer-cloud/visual-recognition-utils.svg?branch=master)](https://travis-ci.org/watson-developer-cloud/visual-recognition-utils)
+# Visual Recognition CLI [![Build Status](https://travis-ci.org/watson-developer-cloud/visual-recognition-utils.svg?branch=master)](https://travis-ci.org/watson-developer-cloud/visual-recognition-utils) [![Greenkeeper badge](https://badges.greenkeeper.io/watson-developer-cloud/visual-recognition-utils.svg)](https://greenkeeper.io/)
 
 Command Line Interface for quickly and easily interacting with the Watson Visual Recognition service & custom classifiers.  
 
