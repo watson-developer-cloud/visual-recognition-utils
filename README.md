@@ -1,4 +1,6 @@
-# Visual Recognition CLI [![Build Status](https://travis-ci.org/watson-developer-cloud/visual-recognition-utils.svg?branch=master)](https://travis-ci.org/watson-developer-cloud/visual-recognition-utils)
+# Visual Recognition CLI 
+
+### DEPRECATED: this repo is no longer actively maintained. It can still be used as reference, but may contain outdated or unpatched code.
 
 Command Line Interface for quickly and easily interacting with the Watson Visual Recognition service & custom classifiers.  
 
